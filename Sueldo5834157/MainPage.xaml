@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Sueldo5834157.model"
+             x:Class="Sueldo5834157.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewmodel:Pago />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+
+            <Label
+                Text="Calcular nuevo sueldo"
+                FontSize="30"
+                FontAttributes="Italic"
+                TextColor="WhiteSmoke"
+                HorizontalOptions="Center" />
+
+            <Entry
+                Text="{Binding Sueldo}"
+                Placeholder="Ingrese el sueldo actual"
+                Keyboard="Numeric"
+                WidthRequest="250"
+                HorizontalOptions="Center" />
+
+            <Button
+                Text="Calcular"
+                Command="{Binding SueldoTotalCommand}"
+                BackgroundColor="CornflowerBlue"
+                TextColor="White"
+                FontAttributes="Bold"
+                WidthRequest="250"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="{Binding Sueldonuevo}"
+                FontSize="30"
+                TextColor="White"
+                HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
